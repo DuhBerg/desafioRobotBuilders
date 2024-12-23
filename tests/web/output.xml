@@ -1,495 +1,495 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.11.9 on win32)" generated="2024-12-23T16:31:33.898858" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.11.9 on win32)" generated="2024-12-23T18:04:14.973080" rpa="false" schemaversion="5">
 <suite id="s1" name="testCases" source="C:\projetosRobot\desafioRobotBuilders\tests\web\testCases.robot">
 <test id="s1-t1" name="Cenário 01: Realizar Login" line="9">
 <kw name="Dado que estou na tela de login" owner="keywords">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-12-23T16:31:34.209912" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\projetosRobot\\desafioRobotBuilders\\tests\\web\\browser\\traces\\61bb8769-4c33-4a71-afac-91b8cf207798"}</msg>
-<msg time="2024-12-23T16:31:34.246918" level="INFO">Starting Browser process C:\Users\Berg\AppData\Local\Programs\Python\Python311\Lib\site-packages\Browser\wrapper\index.js using port 62188</msg>
-<msg time="2024-12-23T16:31:34.247419" level="INFO">Node startup parameters: ['node', 'C:\\Users\\Berg\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\Browser\\wrapper\\index.js', '62188']</msg>
-<msg time="2024-12-23T16:31:35.714174" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\projetosRobot\\desafioRobotBuilders\\tests\\web\\browser\\traces\\61bb8769-4c33-4a71-afac-91b8cf207798"}</msg>
+<msg time="2024-12-23T18:04:15.111726" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\projetosRobot\\desafioRobotBuilders\\tests\\web\\browser\\traces\\4256fbc0-013d-4b68-8bf9-eeb4fee938d2"}</msg>
+<msg time="2024-12-23T18:04:15.128790" level="INFO">Starting Browser process C:\Users\Berg\AppData\Local\Programs\Python\Python311\Lib\site-packages\Browser\wrapper\index.js using port 50098</msg>
+<msg time="2024-12-23T18:04:15.128790" level="INFO">Node startup parameters: ['node', 'C:\\Users\\Berg\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\Browser\\wrapper\\index.js', '50098']</msg>
+<msg time="2024-12-23T18:04:15.844963" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\projetosRobot\\desafioRobotBuilders\\tests\\web\\browser\\traces\\4256fbc0-013d-4b68-8bf9-eeb4fee938d2"}</msg>
 <arg>chromium</arg>
 <arg>headless=False</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-12-23T16:31:34.209413" elapsed="1.505261"/>
+<status status="PASS" start="2024-12-23T18:04:15.110726" elapsed="0.734237"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2024-12-23T16:31:38.547670" level="INFO">Successfully initialized new page object and opened url: https://opensource-demo.orangehrmlive.com/</msg>
-<msg time="2024-12-23T16:31:38.547670" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2024-12-23T18:04:18.094767" level="INFO">Successfully initialized new page object and opened url: https://opensource-demo.orangehrmlive.com/</msg>
+<msg time="2024-12-23T18:04:18.094767" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>https://opensource-demo.orangehrmlive.com/</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2024-12-23T16:31:35.714674" elapsed="2.833496"/>
+<status status="PASS" start="2024-12-23T18:04:15.845964" elapsed="2.248803"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:34.208413" elapsed="4.339757"/>
+<status status="PASS" start="2024-12-23T18:04:15.110726" elapsed="2.984041"/>
 </kw>
 <kw name="Quando inserir as credenciais válidas" owner="keywords">
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:38.550170" level="INFO">Fills the text 'Admin' in the given field.</msg>
+<msg time="2024-12-23T18:04:18.095767" level="INFO">Fills the text 'Admin' in the given field.</msg>
 <arg>//input[@name="username"]</arg>
 <arg>Admin</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:38.549170" elapsed="0.388068"/>
+<status status="PASS" start="2024-12-23T18:04:18.095767" elapsed="0.294780"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:38.938239" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<msg time="2024-12-23T18:04:18.390547" level="INFO">Fills the text 'admin123' in the given field.</msg>
 <arg>//input[@name="password"]</arg>
 <arg>admin123</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:38.937238" elapsed="0.026504"/>
+<status status="PASS" start="2024-12-23T18:04:18.390547" elapsed="0.010074"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:38.964743" level="INFO">Clicks the element '//button[@type="submit"]'.</msg>
+<msg time="2024-12-23T18:04:18.400621" level="INFO">Clicks the element '//button[@type="submit"]'.</msg>
 <arg>//button[@type="submit"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:38.964242" elapsed="1.043682"/>
+<status status="PASS" start="2024-12-23T18:04:18.400621" elapsed="1.040962"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:38.548670" elapsed="1.459754"/>
+<status status="PASS" start="2024-12-23T18:04:18.095767" elapsed="1.345816"/>
 </kw>
 <kw name="Então sou redirecionado para a tela Dashboard" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:40.381489" level="INFO">Waited for Element with selector //h6[text()="Dashboard"] at state visible</msg>
+<msg time="2024-12-23T18:04:19.772553" level="INFO">Waited for Element with selector //h6[text()="Dashboard"] at state visible</msg>
 <arg>//h6[text()="Dashboard"]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:40.008924" elapsed="0.372565"/>
+<status status="PASS" start="2024-12-23T18:04:19.442583" elapsed="0.329970"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:40.008424" elapsed="0.373566"/>
+<status status="PASS" start="2024-12-23T18:04:19.441583" elapsed="0.330970"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:34.207412" elapsed="6.175077"/>
+<status status="PASS" start="2024-12-23T18:04:15.109726" elapsed="4.663828"/>
 </test>
 <test id="s1-t2" name="Cenário 02: Cadastrar novo Admin e validar sucesso" line="14">
 <kw name="Dado que estou logado" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:40.410995" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<msg time="2024-12-23T18:04:19.780555" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
 <arg>//li[contains(@class,"userdropdown")]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:40.392491" elapsed="0.018504"/>
+<status status="PASS" start="2024-12-23T18:04:19.776554" elapsed="0.005001"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:40.391991" elapsed="0.019504"/>
+<status status="PASS" start="2024-12-23T18:04:19.776554" elapsed="0.005001"/>
 </kw>
 <kw name="E na tela &quot;Admin&quot;" owner="keywords">
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:40.412995" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
+<msg time="2024-12-23T18:04:19.781555" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
 <arg>//span[text()="Admin"]/../..//a</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:40.412495" elapsed="0.891655"/>
+<status status="PASS" start="2024-12-23T18:04:19.781555" elapsed="0.776786"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:40.411995" elapsed="0.892155"/>
+<status status="PASS" start="2024-12-23T18:04:19.781555" elapsed="0.776786"/>
 </kw>
 <kw name="Quando inserir as informações do novo Admin" owner="keywords">
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:41.306650" level="INFO">Clicks the element '//button[normalize-space()="Add"]'.</msg>
+<msg time="2024-12-23T18:04:20.559342" level="INFO">Clicks the element '//button[normalize-space()="Add"]'.</msg>
 <arg>//button[normalize-space()="Add"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:41.305649" elapsed="0.728128"/>
+<status status="PASS" start="2024-12-23T18:04:20.558341" elapsed="0.603573"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:42.034777" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
+<msg time="2024-12-23T18:04:21.161914" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
 <arg>//label[text()="User Role"]/../..//i</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:42.034276" elapsed="0.364564"/>
+<status status="PASS" start="2024-12-23T18:04:21.161914" elapsed="0.348041"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:42.401341" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
+<msg time="2024-12-23T18:04:21.509955" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
 <arg>//label[text()="User Role"]/../..//*[text()="Admin"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:42.399340" elapsed="0.045008"/>
+<status status="PASS" start="2024-12-23T18:04:21.509955" elapsed="0.020080"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:42.445348" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
+<msg time="2024-12-23T18:04:21.530035" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
 <arg>//label[text()="Status"]/../..//i</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:42.444348" elapsed="0.031505"/>
+<status status="PASS" start="2024-12-23T18:04:21.530035" elapsed="0.019421"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:42.476854" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
+<msg time="2024-12-23T18:04:21.550456" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
 <arg>//label[text()="Status"]/../..//*[text()="Enabled"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:42.476353" elapsed="0.020504"/>
+<status status="PASS" start="2024-12-23T18:04:21.550456" elapsed="0.020833"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:42.497858" level="INFO">Fills the text 'mandar akhil user' in the given field.</msg>
+<msg time="2024-12-23T18:04:21.571289" level="INFO">Fills the text 'Orange Test Test' in the given field.</msg>
 <arg>//label[text()="Employee Name"]/../..//input</arg>
-<arg>mandar akhil user</arg>
+<arg>Orange Test Test</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:42.497357" elapsed="0.028505"/>
+<status status="PASS" start="2024-12-23T18:04:21.571289" elapsed="0.007064"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:42.526862" level="INFO">Clicks the element '//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]'.</msg>
-<arg>//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]</arg>
+<msg time="2024-12-23T18:04:21.579353" level="INFO">Clicks the element '//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]'.</msg>
+<arg>//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:42.525862" elapsed="1.343733"/>
+<status status="PASS" start="2024-12-23T18:04:21.578353" elapsed="1.341131"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:43.870596" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
+<msg time="2024-12-23T18:04:22.920040" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
 <arg>//label[text()="Username"]/../..//input</arg>
 <arg>nomeAdmin</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:43.869595" elapsed="0.017504"/>
+<status status="PASS" start="2024-12-23T18:04:22.920040" elapsed="0.007749"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:43.888099" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<msg time="2024-12-23T18:04:22.927789" level="INFO">Fills the text 'admin123' in the given field.</msg>
 <arg>//label[text()="Password"]/../..//input</arg>
 <arg>admin123</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:43.887599" elapsed="0.034506"/>
+<status status="PASS" start="2024-12-23T18:04:22.927789" elapsed="0.009537"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:43.923605" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<msg time="2024-12-23T18:04:22.937326" level="INFO">Fills the text 'admin123' in the given field.</msg>
 <arg>//label[text()="Confirm Password"]/../..//input</arg>
 <arg>admin123</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:43.922605" elapsed="0.018003"/>
+<status status="PASS" start="2024-12-23T18:04:22.937326" elapsed="0.007997"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:43.941608" level="INFO">Clicks the element '//button[normalize-space()="Save"]'.</msg>
+<msg time="2024-12-23T18:04:22.945323" level="INFO">Clicks the element '//button[normalize-space()="Save"]'.</msg>
 <arg>//button[normalize-space()="Save"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:43.941108" elapsed="0.027006"/>
+<status status="PASS" start="2024-12-23T18:04:22.945323" elapsed="0.020970"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:41.305149" elapsed="2.662965"/>
+<status status="PASS" start="2024-12-23T18:04:20.558341" elapsed="2.408953"/>
 </kw>
 <kw name="Então o Admin é cadastrado com sucesso" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:45.294843" level="INFO">Waited for Element with selector //*[text()="Successfully Saved"] at state visible</msg>
+<msg time="2024-12-23T18:04:24.298497" level="INFO">Waited for Element with selector //*[text()="Successfully Saved"] at state visible</msg>
 <arg>//*[text()="Successfully Saved"]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:43.969113" elapsed="1.325730"/>
+<status status="PASS" start="2024-12-23T18:04:22.967294" elapsed="1.331203"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:43.968613" elapsed="1.326731"/>
+<status status="PASS" start="2024-12-23T18:04:22.967294" elapsed="1.331203"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:40.391490" elapsed="4.903854"/>
+<status status="PASS" start="2024-12-23T18:04:19.776554" elapsed="4.522943"/>
 </test>
 <test id="s1-t3" name="Cenário 03: Buscar Admin cadastrado" line="20">
 <kw name="Dado que estou logado" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:45.310847" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<msg time="2024-12-23T18:04:24.305498" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
 <arg>//li[contains(@class,"userdropdown")]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:45.300845" elapsed="0.010502"/>
+<status status="PASS" start="2024-12-23T18:04:24.302497" elapsed="0.003001"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:45.300845" elapsed="0.010502"/>
+<status status="PASS" start="2024-12-23T18:04:24.301497" elapsed="0.004001"/>
 </kw>
 <kw name="E na tela &quot;Admin&quot;" owner="keywords">
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:45.313346" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
+<msg time="2024-12-23T18:04:24.306565" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
 <arg>//span[text()="Admin"]/../..//a</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:45.312847" elapsed="0.566099"/>
+<status status="PASS" start="2024-12-23T18:04:24.305498" elapsed="0.492431"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:45.312346" elapsed="0.567099"/>
+<status status="PASS" start="2024-12-23T18:04:24.305498" elapsed="0.492431"/>
 </kw>
 <kw name="Quando buscar Admin cadastrado" owner="keywords">
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:45.881446" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
+<msg time="2024-12-23T18:04:24.798930" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
 <arg>//label[text()="Username"]/../..//input</arg>
 <arg>nomeAdmin</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:45.880946" elapsed="0.337058"/>
+<status status="PASS" start="2024-12-23T18:04:24.797929" elapsed="0.328247"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:46.219004" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
+<msg time="2024-12-23T18:04:25.127175" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
 <arg>//label[text()="User Role"]/../..//i</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:46.218505" elapsed="0.060511"/>
+<status status="PASS" start="2024-12-23T18:04:25.126176" elapsed="0.023007"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:46.280015" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
+<msg time="2024-12-23T18:04:25.149183" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
 <arg>//label[text()="User Role"]/../..//*[text()="Admin"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:46.279515" elapsed="0.031006"/>
+<status status="PASS" start="2024-12-23T18:04:25.149183" elapsed="0.022072"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:46.311021" level="INFO">Fills the text 'mandar akhil user' in the given field.</msg>
+<msg time="2024-12-23T18:04:25.171255" level="INFO">Fills the text 'Orange Test Test' in the given field.</msg>
 <arg>//label[text()="Employee Name"]/../..//input</arg>
-<arg>mandar akhil user</arg>
+<arg>Orange Test Test</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:46.310521" elapsed="0.013001"/>
+<status status="PASS" start="2024-12-23T18:04:25.171255" elapsed="0.008001"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:46.327523" level="INFO">Clicks the element '//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]'.</msg>
-<arg>//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]</arg>
+<msg time="2024-12-23T18:04:25.179256" level="INFO">Clicks the element '//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]'.</msg>
+<arg>//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:46.327023" elapsed="1.358236"/>
+<status status="PASS" start="2024-12-23T18:04:25.179256" elapsed="1.343467"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:47.685760" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
+<msg time="2024-12-23T18:04:26.523725" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
 <arg>//label[text()="Status"]/../..//i</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:47.685259" elapsed="0.030005"/>
+<status status="PASS" start="2024-12-23T18:04:26.523725" elapsed="0.019833"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:47.716265" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
+<msg time="2024-12-23T18:04:26.543558" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
 <arg>//label[text()="Status"]/../..//*[text()="Enabled"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:47.715765" elapsed="0.023003"/>
+<status status="PASS" start="2024-12-23T18:04:26.543558" elapsed="0.020832"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:47.740768" level="INFO">Clicks the element '//button[normalize-space()="Search"]'.</msg>
+<msg time="2024-12-23T18:04:26.564390" level="INFO">Clicks the element '//button[normalize-space()="Search"]'.</msg>
 <arg>//button[normalize-space()="Search"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:47.739268" elapsed="0.037009"/>
+<status status="PASS" start="2024-12-23T18:04:26.564390" elapsed="0.022279"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:45.880445" elapsed="1.895832"/>
+<status status="PASS" start="2024-12-23T18:04:24.797929" elapsed="1.788740"/>
 </kw>
 <kw name="Então o Admin é exibido na lista de Admins" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:48.075827" level="INFO">Waited for Element with selector //div[@role="table"]//div[@role="row"]//div[text()="nomeAdmin"] at state visible</msg>
+<msg time="2024-12-23T18:04:26.901788" level="INFO">Waited for Element with selector //div[@role="table"]//div[@role="row"]//div[text()="nomeAdmin"] at state visible</msg>
 <arg>//div[@role="table"]//div[@role="row"]//div[text()="nomeAdmin"]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:47.777775" elapsed="0.298052"/>
+<status status="PASS" start="2024-12-23T18:04:26.586669" elapsed="0.315119"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:47.777275" elapsed="0.299053"/>
+<status status="PASS" start="2024-12-23T18:04:26.586669" elapsed="0.315119"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:45.300344" elapsed="2.775984"/>
+<status status="PASS" start="2024-12-23T18:04:24.301497" elapsed="2.600291"/>
 </test>
 <test id="s1-t4" name="Cenário 04: Apagar Admin cadastrado" line="26">
 <kw name="Dado que estou logado" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:48.087829" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<msg time="2024-12-23T18:04:26.907847" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
 <arg>//li[contains(@class,"userdropdown")]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:48.080828" elapsed="0.007501"/>
+<status status="PASS" start="2024-12-23T18:04:26.904789" elapsed="0.003058"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:48.080328" elapsed="0.008001"/>
+<status status="PASS" start="2024-12-23T18:04:26.904789" elapsed="0.003058"/>
 </kw>
 <kw name="E na tela &quot;Admin&quot;" owner="keywords">
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:48.089830" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
+<msg time="2024-12-23T18:04:26.908848" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
 <arg>//span[text()="Admin"]/../..//a</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:48.089330" elapsed="0.516090"/>
+<status status="PASS" start="2024-12-23T18:04:26.907847" elapsed="0.485934"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:48.088830" elapsed="0.516590"/>
+<status status="PASS" start="2024-12-23T18:04:26.907847" elapsed="0.485934"/>
 </kw>
 <kw name="Quando apagar Admin cadastrado" owner="keywords">
 <kw name="Quando buscar Admin cadastrado" owner="keywords">
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:48.607419" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
+<msg time="2024-12-23T18:04:27.394782" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
 <arg>//label[text()="Username"]/../..//input</arg>
 <arg>nomeAdmin</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:48.606919" elapsed="0.364063"/>
+<status status="PASS" start="2024-12-23T18:04:27.394782" elapsed="0.334322"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:48.971984" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
+<msg time="2024-12-23T18:04:27.729104" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
 <arg>//label[text()="User Role"]/../..//i</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:48.970982" elapsed="0.038007"/>
+<status status="PASS" start="2024-12-23T18:04:27.729104" elapsed="0.023007"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:49.009990" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
+<msg time="2024-12-23T18:04:27.753112" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
 <arg>//label[text()="User Role"]/../..//*[text()="Admin"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:49.009489" elapsed="0.035007"/>
+<status status="PASS" start="2024-12-23T18:04:27.752111" elapsed="0.020565"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-23T16:31:49.044996" level="INFO">Fills the text 'mandar akhil user' in the given field.</msg>
+<msg time="2024-12-23T18:04:27.772676" level="INFO">Fills the text 'Orange Test Test' in the given field.</msg>
 <arg>//label[text()="Employee Name"]/../..//input</arg>
-<arg>mandar akhil user</arg>
+<arg>Orange Test Test</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:49.044496" elapsed="0.045007"/>
+<status status="PASS" start="2024-12-23T18:04:27.772676" elapsed="0.008002"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:49.091004" level="INFO">Clicks the element '//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]'.</msg>
-<arg>//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]</arg>
+<msg time="2024-12-23T18:04:27.780678" level="INFO">Clicks the element '//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]'.</msg>
+<arg>//label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:49.090004" elapsed="1.337232"/>
+<status status="PASS" start="2024-12-23T18:04:27.780678" elapsed="1.353243"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:50.427737" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
+<msg time="2024-12-23T18:04:29.134921" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
 <arg>//label[text()="Status"]/../..//i</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:50.427236" elapsed="0.027005"/>
+<status status="PASS" start="2024-12-23T18:04:29.133921" elapsed="0.019771"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:50.454741" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
+<msg time="2024-12-23T18:04:29.154692" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
 <arg>//label[text()="Status"]/../..//*[text()="Enabled"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:50.454741" elapsed="0.021004"/>
+<status status="PASS" start="2024-12-23T18:04:29.153692" elapsed="0.021832"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:50.476745" level="INFO">Clicks the element '//button[normalize-space()="Search"]'.</msg>
+<msg time="2024-12-23T18:04:29.175524" level="INFO">Clicks the element '//button[normalize-space()="Search"]'.</msg>
 <arg>//button[normalize-space()="Search"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:50.476245" elapsed="0.034506"/>
+<status status="PASS" start="2024-12-23T18:04:29.175524" elapsed="0.021341"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:48.606419" elapsed="1.904332"/>
+<status status="PASS" start="2024-12-23T18:04:27.394782" elapsed="1.802083"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:50.512251" level="INFO">Clicks the element '//input[@type="checkbox" and @value=0]/..//span'.</msg>
+<msg time="2024-12-23T18:04:29.197864" level="INFO">Clicks the element '//input[@type="checkbox" and @value=0]/..//span'.</msg>
 <arg>//input[@type="checkbox" and @value=0]/..//span</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:50.511250" elapsed="0.326057"/>
+<status status="PASS" start="2024-12-23T18:04:29.196865" elapsed="0.321624"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:50.838308" level="INFO">Clicks the element '//button[contains(@class,"table-cell-action")]//i[contains(@class,"trash")]'.</msg>
+<msg time="2024-12-23T18:04:29.518489" level="INFO">Clicks the element '//button[contains(@class,"table-cell-action")]//i[contains(@class,"trash")]'.</msg>
 <arg>//button[contains(@class,"table-cell-action")]//i[contains(@class,"trash")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:50.837307" elapsed="0.046509"/>
+<status status="PASS" start="2024-12-23T18:04:29.518489" elapsed="0.021158"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:50.884816" level="INFO">Clicks the element '//button[normalize-space()="Yes, Delete"]'.</msg>
+<msg time="2024-12-23T18:04:29.540644" level="INFO">Clicks the element '//button[normalize-space()="Yes, Delete"]'.</msg>
 <arg>//button[normalize-space()="Yes, Delete"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:50.883816" elapsed="0.043508"/>
+<status status="PASS" start="2024-12-23T18:04:29.539647" elapsed="0.019835"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:48.605920" elapsed="2.321903"/>
+<status status="PASS" start="2024-12-23T18:04:27.394782" elapsed="2.164700"/>
 </kw>
 <kw name="Então o Admin é removido da lista de Admins" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:51.237377" level="INFO">Waited for Element with selector //*[text()="Successfully Deleted"] at state visible</msg>
+<msg time="2024-12-23T18:04:29.877779" level="INFO">Waited for Element with selector //*[text()="Successfully Deleted"] at state visible</msg>
 <arg>//*[text()="Successfully Deleted"]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:50.928823" elapsed="0.308554"/>
+<status status="PASS" start="2024-12-23T18:04:29.560482" elapsed="0.317297"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:50.928323" elapsed="0.309554"/>
+<status status="PASS" start="2024-12-23T18:04:29.560482" elapsed="0.317297"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:48.079828" elapsed="3.158049"/>
+<status status="PASS" start="2024-12-23T18:04:26.904789" elapsed="2.973990"/>
 </test>
 <test id="s1-t5" name="Cenário 05: Realizar Logout" line="32">
 <kw name="Dado que estou logado" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:51.249379" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<msg time="2024-12-23T18:04:29.883780" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
 <arg>//li[contains(@class,"userdropdown")]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:51.242378" elapsed="0.007501"/>
+<status status="PASS" start="2024-12-23T18:04:29.880780" elapsed="0.003000"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:51.242378" elapsed="0.008001"/>
+<status status="PASS" start="2024-12-23T18:04:29.880780" elapsed="0.003000"/>
 </kw>
 <kw name="Quando clicar em &quot;Logout&quot;" owner="keywords">
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:51.252380" level="INFO">Clicks the element '//i[contains(@class,"userdropdown-icon")]'.</msg>
+<msg time="2024-12-23T18:04:29.884781" level="INFO">Clicks the element '//i[contains(@class,"userdropdown-icon")]'.</msg>
 <arg>//i[contains(@class,"userdropdown-icon")]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:51.251380" elapsed="0.043507"/>
+<status status="PASS" start="2024-12-23T18:04:29.884781" elapsed="0.020072"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-23T16:31:51.295387" level="INFO">Clicks the element '//li//a[text()="Logout"]'.</msg>
+<msg time="2024-12-23T18:04:29.905854" level="INFO">Clicks the element '//li//a[text()="Logout"]'.</msg>
 <arg>//li//a[text()="Logout"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-23T16:31:51.294887" elapsed="0.796639"/>
+<status status="PASS" start="2024-12-23T18:04:29.905854" elapsed="1.290540"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:51.250880" elapsed="0.841146"/>
+<status status="PASS" start="2024-12-23T18:04:29.883780" elapsed="1.312614"/>
 </kw>
 <kw name="Então sou redirecionado para a tela de login" owner="keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-23T16:31:52.432585" level="INFO">Waited for Element with selector //h5[text()="Login"] at state visible</msg>
+<msg time="2024-12-23T18:04:31.435837" level="INFO">Waited for Element with selector //h5[text()="Login"] at state visible</msg>
 <arg>//h5[text()="Login"]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-23T16:31:52.092526" elapsed="0.340059"/>
+<status status="PASS" start="2024-12-23T18:04:31.196394" elapsed="0.239443"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:52.092026" elapsed="0.341059"/>
+<status status="PASS" start="2024-12-23T18:04:31.196394" elapsed="0.240444"/>
 </kw>
-<status status="PASS" start="2024-12-23T16:31:51.241878" elapsed="1.191207"/>
+<status status="PASS" start="2024-12-23T18:04:29.879780" elapsed="1.557058"/>
 </test>
-<status status="PASS" start="2024-12-23T16:31:33.902360" elapsed="18.533725"/>
+<status status="PASS" start="2024-12-23T18:04:14.975080" elapsed="16.463758"/>
 </suite>
 <statistics>
 <total>
