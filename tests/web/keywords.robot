@@ -29,8 +29,8 @@ Quando inserir as informações do novo Admin
     Click                                   //label[text()="User Role"]/../..//*[text()="Admin"]
     Click                                   //label[text()="Status"]/../..//i
     Click                                   //label[text()="Status"]/../..//*[text()="Enabled"]
-    Fill Text                               //label[text()="Employee Name"]/../..//input                                    mandar akhil user
-    Click                                   //label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]       
+    Fill Text                               //label[text()="Employee Name"]/../..//input                                    Orange Test Test
+    Click                                   //label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]       
     Fill Text                               //label[text()="Username"]/../..//input                                         nomeAdmin
     Fill Text                               //label[text()="Password"]/../..//input                                         admin123
     Fill Text                               //label[text()="Confirm Password"]/../..//input                                 admin123
@@ -43,8 +43,8 @@ Quando buscar Admin cadastrado
     Fill Text                               //label[text()="Username"]/../..//input                                         nomeAdmin
     Click                                   //label[text()="User Role"]/../..//i
     Click                                   //label[text()="User Role"]/../..//*[text()="Admin"]
-    Fill Text                               //label[text()="Employee Name"]/../..//input                                    mandar akhil user
-    Click                                   //label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="mandar akhil user"]  
+    Fill Text                               //label[text()="Employee Name"]/../..//input                                    Orange Test Test
+    Click                                   //label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]  
     Click                                   //label[text()="Status"]/../..//i
     Click                                   //label[text()="Status"]/../..//*[text()="Enabled"]
     Click                                   //button[normalize-space()="Search"]
