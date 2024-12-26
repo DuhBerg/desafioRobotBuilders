@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.9 on win32)" generated="2024-12-26T17:57:05.639363" rpa="false" schemaversion="5">
+<suite id="s1" name="Api &amp; Mobile &amp; Web">
+<suite id="s1-s1" name="Api" source="C:\projetosRobot\desafioRobotBuilders\tests\api">
+<suite id="s1-s1-s1" name="testCases" source="C:\projetosRobot\desafioRobotBuilders\tests\api\testCases.robot">
+<test id="s1-s1-s1-t1" name="Cenário 01: Validar o logradouro que a API retorna" line="9">
+<kw name="Dado que tenho um cep válido" owner="keywords">
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-26T17:57:05.997012" level="INFO">${cepValido} = 69084-470</msg>
+<arg>${cepValido}</arg>
+<arg>69084-470</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-26T17:57:05.995508" elapsed="0.001504"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:05.995508" elapsed="0.001504"/>
+</kw>
+<kw name="Quando faço uma requisição GET para a API de CEP" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-12-26T17:57:05.997012" level="INFO">Creating Session using : alias=CEP, url=https://viacep.com.br/ws/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>CEP</arg>
+<arg>https://viacep.com.br/ws/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-12-26T17:57:05.997012" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-12-26T17:57:06.433996" level="INFO">GET Request : url=https://viacep.com.br/ws/69084-470/json 
+ path_url=/ws/69084-470/json 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-12-26T17:57:06.434996" level="INFO">GET Response : url=https://viacep.com.br/ws/69084-470/json 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.22.0', 'Date': 'Thu, 26 Dec 2024 20:57:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Expires': 'Thu, 26 Dec 2024 21:57:51 GMT', 'Cache-Control': 'max-age=3600, public', 'Pragma': 'public', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Content-Type, X-Request-With, X-Requested-By', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Max-Age': '86400'} 
+ body={
+  "cep": "69084-470",
+  "logradouro": "Rua Cacatua",
+  "complemento": "",
+  "unidade": "",
+  "bairro": "Zumbi dos Palmares",
+  "localidade": "Manaus",
+  "uf": "AM",
+  "estado": "Amazonas",
+  "regiao": "Norte",
+  "ibge": "1302603",
+  "gia": "",
+  "ddd": "92",
+  "siafi": "0255"
+} 
+ </msg>
+<msg time="2024-12-26T17:57:06.434996" level="INFO">C:\Users\Berg\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'viacep.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-12-26T17:57:06.434996" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>CEP</arg>
+<arg>/${cepValido}/json</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-12-26T17:57:05.998023" elapsed="0.436973"/>
+</kw>
+<kw name="Convert To Dictionary" owner="Collections">
+<msg time="2024-12-26T17:57:06.436000" level="INFO">${response} = {'cep': '69084-470', 'logradouro': 'Rua Cacatua', 'complemento': '', 'unidade': '', 'bairro': 'Zumbi dos Palmares', 'localidade': 'Manaus', 'uf': 'AM', 'estado': 'Amazonas', 'regiao': 'Norte', 'ibge':...</msg>
+<var>${response}</var>
+<arg>${response.json()}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.434996" elapsed="0.001004"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-26T17:57:06.436000" level="INFO">${response} = {'cep': '69084-470', 'logradouro': 'Rua Cacatua', 'complemento': '', 'unidade': '', 'bairro': 'Zumbi dos Palmares', 'localidade': 'Manaus', 'uf': 'AM', 'estado': 'Amazonas', 'regiao': 'Norte', 'ibge':...</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.436000" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:05.997012" elapsed="0.438988"/>
+</kw>
+<kw name="Então o logradouro da resposta deve ser &quot;Rua Cacatua&quot;" owner="keywords">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-12-26T17:57:06.436996" level="INFO">${logradouro} = Rua Cacatua</msg>
+<var>${logradouro}</var>
+<arg>${response}</arg>
+<arg>logradouro</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.436996" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${logradouro}</arg>
+<arg>Rua Cacatua</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.436996" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:06.436000" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:05.994473" elapsed="0.442523"/>
+</test>
+<test id="s1-s1-s1-t2" name="Cenário 02: Validar o DDD que a API retorna" line="14">
+<kw name="Dado que tenho um cep válido" owner="keywords">
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-26T17:57:06.438034" level="INFO">${cepValido} = 69084-470</msg>
+<arg>${cepValido}</arg>
+<arg>69084-470</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.438034" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:06.438034" elapsed="0.000000"/>
+</kw>
+<kw name="Quando faço uma requisição GET para a API de CEP" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-12-26T17:57:06.439033" level="INFO">Creating Session using : alias=CEP, url=https://viacep.com.br/ws/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>CEP</arg>
+<arg>https://viacep.com.br/ws/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-12-26T17:57:06.439033" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-12-26T17:57:06.866835" level="INFO">GET Request : url=https://viacep.com.br/ws/69084-470/json 
+ path_url=/ws/69084-470/json 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-12-26T17:57:06.866835" level="INFO">GET Response : url=https://viacep.com.br/ws/69084-470/json 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.22.0', 'Date': 'Thu, 26 Dec 2024 20:57:52 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Expires': 'Thu, 26 Dec 2024 21:57:52 GMT', 'Cache-Control': 'max-age=3600, public', 'Pragma': 'public', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Allow-Headers': 'Content-Type, X-Request-With, X-Requested-By', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Max-Age': '86400'} 
+ body={
+  "cep": "69084-470",
+  "logradouro": "Rua Cacatua",
+  "complemento": "",
+  "unidade": "",
+  "bairro": "Zumbi dos Palmares",
+  "localidade": "Manaus",
+  "uf": "AM",
+  "estado": "Amazonas",
+  "regiao": "Norte",
+  "ibge": "1302603",
+  "gia": "",
+  "ddd": "92",
+  "siafi": "0255"
+} 
+ </msg>
+<msg time="2024-12-26T17:57:06.866835" level="INFO">C:\Users\Berg\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'viacep.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-12-26T17:57:06.867884" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>CEP</arg>
+<arg>/${cepValido}/json</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.439033" elapsed="0.428851"/>
+</kw>
+<kw name="Convert To Dictionary" owner="Collections">
+<msg time="2024-12-26T17:57:06.867884" level="INFO">${response} = {'cep': '69084-470', 'logradouro': 'Rua Cacatua', 'complemento': '', 'unidade': '', 'bairro': 'Zumbi dos Palmares', 'localidade': 'Manaus', 'uf': 'AM', 'estado': 'Amazonas', 'regiao': 'Norte', 'ibge':...</msg>
+<var>${response}</var>
+<arg>${response.json()}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.867884" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-12-26T17:57:06.869086" level="INFO">${response} = {'cep': '69084-470', 'logradouro': 'Rua Cacatua', 'complemento': '', 'unidade': '', 'bairro': 'Zumbi dos Palmares', 'localidade': 'Manaus', 'uf': 'AM', 'estado': 'Amazonas', 'regiao': 'Norte', 'ibge':...</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.867884" elapsed="0.001202"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:06.439033" elapsed="0.430053"/>
+</kw>
+<kw name="Então o DDD da resposta deve ser &quot;92&quot;" owner="keywords">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-12-26T17:57:06.869086" level="INFO">${ddd} = 92</msg>
+<var>${ddd}</var>
+<arg>${response}</arg>
+<arg>ddd</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.869086" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${ddd}</arg>
+<arg>92</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-12-26T17:57:06.870087" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:06.869086" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:06.438034" elapsed="0.432053"/>
+</test>
+<status status="PASS" start="2024-12-26T17:57:05.667296" elapsed="1.202791"/>
+</suite>
+<status status="PASS" start="2024-12-26T17:57:05.666295" elapsed="1.204793"/>
+</suite>
+<suite id="s1-s2" name="Mobile" source="C:\projetosRobot\desafioRobotBuilders\tests\mobile">
+<suite id="s1-s2-s1" name="testCases" source="C:\projetosRobot\desafioRobotBuilders\tests\mobile\testCases.robot">
+<test id="s1-s2-s1-t1" name="Cenário 01: Crie um Cadastro" line="9">
+<kw name="Dado que o aplicativo está aberto" owner="keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Activity" owner="AppiumLibrary">
+<kw name="No Operation" owner="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="PASS" start="2024-12-26T17:57:07.034589" elapsed="0.000000"/>
+</kw>
+<msg time="2024-12-26T17:57:07.035589" level="FAIL">No application is open</msg>
+<doc>Retrieves the current activity on the device.</doc>
+<status status="FAIL" start="2024-12-26T17:57:07.034589" elapsed="0.001000">No application is open</status>
+</kw>
+<msg time="2024-12-26T17:57:07.035589" level="INFO">${appAberto} = False</msg>
+<var>${appAberto}</var>
+<arg>Get Activity</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-26T17:57:07.034589" elapsed="0.001000"/>
+</kw>
+<if>
+<branch type="IF" condition="${appAberto} == False">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${remoteUrl}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>automationName=${automationName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-12-26T17:57:07.035589" elapsed="11.951540"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:07.035589" elapsed="11.951540"/>
+</branch>
+<status status="PASS" start="2024-12-26T17:57:07.035589" elapsed="11.951540"/>
+</if>
+<status status="PASS" start="2024-12-26T17:57:07.034589" elapsed="11.952540"/>
+</kw>
+<kw name="Quando clicar no botão &quot;Register&quot;" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:21.446058" level="INFO">criteria is com.example.vamsi.login:id/tvRegister</msg>
+<arg>id=${idPrefix}tvRegister</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-26T17:57:18.987129" elapsed="2.458929"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:21.448325" level="INFO">Clicking element 'id=com.example.vamsi.login:id/tvRegister'.</msg>
+<msg time="2024-12-26T17:57:25.132538" level="INFO">criteria is com.example.vamsi.login:id/tvRegister</msg>
+<arg>id=${idPrefix}tvRegister</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:21.446058" elapsed="3.686480"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:18.987129" elapsed="6.145409"/>
+</kw>
+<kw name="E preenche os campos obrigatórios" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:25.239422" level="INFO">criteria is com.example.vamsi.login:id/etRegName</msg>
+<arg>id=${idPrefix}etRegName</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-26T17:57:25.132538" elapsed="0.106884"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:25.240422" level="INFO">Typing text 'Eduardo Berg' into text field 'id=com.example.vamsi.login:id/etRegName'</msg>
+<msg time="2024-12-26T17:57:25.460954" level="INFO">criteria is com.example.vamsi.login:id/etRegName</msg>
+<arg>id=${idPrefix}etRegName</arg>
+<arg>Eduardo Berg</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:25.239422" elapsed="0.221532"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:25.462194" level="INFO">Typing text '19 99999-9999' into text field 'id=com.example.vamsi.login:id/etRegPhone'</msg>
+<msg time="2024-12-26T17:57:26.546229" level="INFO">criteria is com.example.vamsi.login:id/etRegPhone</msg>
+<arg>id=${idPrefix}etRegPhone</arg>
+<arg>19 99999-9999</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:25.460954" elapsed="1.085275"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:26.547230" level="INFO">Typing text 'email@gmail.com' into text field 'id=com.example.vamsi.login:id/etRegGmail'</msg>
+<msg time="2024-12-26T17:57:27.618396" level="INFO">criteria is com.example.vamsi.login:id/etRegGmail</msg>
+<arg>id=${idPrefix}etRegGmail</arg>
+<arg>email@gmail.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:26.546229" elapsed="1.072167"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:27.619117" level="INFO">Typing text '123456789' into text field 'id=com.example.vamsi.login:id/etRegPassword'</msg>
+<msg time="2024-12-26T17:57:28.720497" level="INFO">criteria is com.example.vamsi.login:id/etRegPassword</msg>
+<arg>id=${idPrefix}etRegPassword</arg>
+<arg>123456789</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:27.619117" elapsed="1.101380"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:28.722000" level="INFO">Clicking element 'id=com.example.vamsi.login:id/btnRegLogin'.</msg>
+<msg time="2024-12-26T17:57:29.412678" level="INFO">criteria is com.example.vamsi.login:id/btnRegLogin</msg>
+<arg>id=${idPrefix}btnRegLogin</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:28.720497" elapsed="0.692181"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:25.132538" elapsed="4.280140"/>
+</kw>
+<kw name="Então o cadastro é realizado com sucesso" owner="keywords">
+<kw name="Get Source" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:29.938898" level="INFO">${pageSource} = &lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2138"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.example....</msg>
+<var>${pageSource}</var>
+<doc>Returns the entire source of the current page.</doc>
+<status status="PASS" start="2024-12-26T17:57:29.412678" elapsed="0.526220"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${pageSource}</arg>
+<arg>Registration Successful</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-26T17:57:29.938898" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:29.939904" level="INFO">Clicking element 'id=com.example.vamsi.login:id/btnGotoLogin'.</msg>
+<msg time="2024-12-26T17:57:31.084353" level="INFO">criteria is com.example.vamsi.login:id/btnGotoLogin</msg>
+<arg>id=${idPrefix}btnGotoLogin</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:29.938898" elapsed="1.145455"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:29.412678" elapsed="1.671675"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:07.034589" elapsed="24.051268"/>
+</test>
+<test id="s1-s2-s1-t2" name="Cenário 02: Realize o login com o novo cadastro e valide se houve sucesso" line="15">
+<kw name="Dado que o aplicativo está aberto" owner="keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Activity" owner="AppiumLibrary">
+<doc>Retrieves the current activity on the device.</doc>
+<status status="PASS" start="2024-12-26T17:57:31.086859" elapsed="0.122135"/>
+</kw>
+<msg time="2024-12-26T17:57:31.209994" level="INFO">${appAberto} = True</msg>
+<var>${appAberto}</var>
+<arg>Get Activity</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-26T17:57:31.086859" elapsed="0.123135"/>
+</kw>
+<if>
+<branch type="IF" condition="${appAberto} == False">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${remoteUrl}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>automationName=${automationName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="NOT RUN" start="2024-12-26T17:57:31.209994" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-12-26T17:57:31.209994" elapsed="0.000502"/>
+</branch>
+<status status="PASS" start="2024-12-26T17:57:31.209994" elapsed="0.000502"/>
+</if>
+<status status="PASS" start="2024-12-26T17:57:31.085857" elapsed="0.124639"/>
+</kw>
+<kw name="Quando preencher os campos de login com um cadastro existente" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:34.057347" level="INFO">criteria is com.example.vamsi.login:id/etLogGmail
+criteria is com.example.vamsi.login:id/etLogGmail</msg>
+<arg>id=${idPrefix}etLogGmail</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-26T17:57:31.210496" elapsed="2.847364"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:34.058809" level="INFO">Typing text 'email@gmail.com' into text field 'id=com.example.vamsi.login:id/etLogGmail'</msg>
+<msg time="2024-12-26T17:57:35.095049" level="INFO">criteria is com.example.vamsi.login:id/etLogGmail</msg>
+<arg>id=${idPrefix}etLogGmail</arg>
+<arg>email@gmail.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:34.057860" elapsed="1.037189"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:35.096048" level="INFO">Typing text '123456789' into text field 'id=com.example.vamsi.login:id/etLoginPassword'</msg>
+<msg time="2024-12-26T17:57:36.172678" level="INFO">criteria is com.example.vamsi.login:id/etLoginPassword</msg>
+<arg>id=${idPrefix}etLoginPassword</arg>
+<arg>123456789</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:35.095049" elapsed="1.077629"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:36.174182" level="INFO">Clicking element 'id=com.example.vamsi.login:id/btnLogin'.</msg>
+<msg time="2024-12-26T17:57:36.980581" level="INFO">criteria is com.example.vamsi.login:id/btnLogin</msg>
+<arg>id=${idPrefix}btnLogin</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:36.172678" elapsed="0.807903"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:31.210496" elapsed="5.770085"/>
+</kw>
+<kw name="Então o login é realizado com sucesso" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:42.051153" level="INFO">xpath criteria: //android.widget.TextView[@text="You are now logged in"]</msg>
+<arg>xpath=//android.widget.TextView[@text="You are now logged in"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-26T17:57:36.980581" elapsed="5.070572"/>
+</kw>
+<kw name="Go Back" owner="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" start="2024-12-26T17:57:42.051153" elapsed="2.134693"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:36.980581" elapsed="7.206266"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:31.085857" elapsed="13.100990"/>
+</test>
+<test id="s1-s2-s1-t3" name="Cenário 03: Realize o login com um cadastro inexistente e valide o retorno exibido" line="20">
+<kw name="Dado que o aplicativo está aberto" owner="keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Activity" owner="AppiumLibrary">
+<doc>Retrieves the current activity on the device.</doc>
+<status status="PASS" start="2024-12-26T17:57:44.187858" elapsed="0.123060"/>
+</kw>
+<msg time="2024-12-26T17:57:44.310918" level="INFO">${appAberto} = True</msg>
+<var>${appAberto}</var>
+<arg>Get Activity</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-26T17:57:44.187858" elapsed="0.123060"/>
+</kw>
+<if>
+<branch type="IF" condition="${appAberto} == False">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${remoteUrl}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>automationName=${automationName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="NOT RUN" start="2024-12-26T17:57:44.310918" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-12-26T17:57:44.310918" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-12-26T17:57:44.310918" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2024-12-26T17:57:44.187858" elapsed="0.123060"/>
+</kw>
+<kw name="Quando preencher os campos de login com um cadastro inexistente" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:44.798132" level="INFO">criteria is com.example.vamsi.login:id/etLogGmail</msg>
+<arg>id=${idPrefix}etLogGmail</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-12-26T17:57:44.310918" elapsed="0.487214"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:44.799623" level="INFO">Typing text 'inexistente@gmail.com' into text field 'id=com.example.vamsi.login:id/etLogGmail'</msg>
+<msg time="2024-12-26T17:57:45.025968" level="INFO">criteria is com.example.vamsi.login:id/etLogGmail</msg>
+<arg>id=${idPrefix}etLogGmail</arg>
+<arg>inexistente@gmail.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:44.798132" elapsed="0.227836"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:45.026969" level="INFO">Typing text 'inexistente' into text field 'id=com.example.vamsi.login:id/etLoginPassword'</msg>
+<msg time="2024-12-26T17:57:46.107416" level="INFO">criteria is com.example.vamsi.login:id/etLoginPassword</msg>
+<arg>id=${idPrefix}etLoginPassword</arg>
+<arg>inexistente</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:45.026969" elapsed="1.080447"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:46.107922" level="INFO">Clicking element 'id=com.example.vamsi.login:id/btnLogin'.</msg>
+<msg time="2024-12-26T17:57:46.843656" level="INFO">criteria is com.example.vamsi.login:id/btnLogin</msg>
+<arg>id=${idPrefix}btnLogin</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-12-26T17:57:46.107922" elapsed="0.735734"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:44.310918" elapsed="2.532738"/>
+</kw>
+<kw name="Então o login não é realizado com sucesso" owner="keywords">
+<kw name="Get Source" owner="AppiumLibrary">
+<msg time="2024-12-26T17:57:47.364625" level="INFO">${pageSource} = &lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2138"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.example....</msg>
+<var>${pageSource}</var>
+<doc>Returns the entire source of the current page.</doc>
+<status status="PASS" start="2024-12-26T17:57:46.844657" elapsed="0.519968"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${pageSource}</arg>
+<arg>Login error</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-26T17:57:47.364625" elapsed="0.001504"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:46.844657" elapsed="0.521472"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:44.186847" elapsed="3.179282"/>
+</test>
+<status status="PASS" start="2024-12-26T17:57:06.873591" elapsed="40.492538"/>
+</suite>
+<status status="PASS" start="2024-12-26T17:57:06.872088" elapsed="40.495044"/>
+</suite>
+<suite id="s1-s3" name="Web" source="C:\projetosRobot\desafioRobotBuilders\tests\web">
+<suite id="s1-s3-s1" name="testCases" source="C:\projetosRobot\desafioRobotBuilders\tests\web\testCases.robot">
+<test id="s1-s3-s1-t1" name="Cenário 01: Realizar Login" line="9">
+<kw name="Dado que estou na tela de login" owner="keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-12-26T17:57:47.508951" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\projetosRobot\\desafioRobotBuilders\\logs\\browser\\traces\\7b85c02e-5c50-49ca-bac1-58404bfb97e2"}</msg>
+<msg time="2024-12-26T17:57:47.530189" level="INFO">Starting Browser process C:\Users\Berg\AppData\Local\Programs\Python\Python311\Lib\site-packages\Browser\wrapper\index.js using port 60390</msg>
+<msg time="2024-12-26T17:57:47.530189" level="INFO">Node startup parameters: ['node', 'C:\\Users\\Berg\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\Browser\\wrapper\\index.js', '60390']</msg>
+<msg time="2024-12-26T17:57:48.314249" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\projetosRobot\\desafioRobotBuilders\\logs\\browser\\traces\\7b85c02e-5c50-49ca-bac1-58404bfb97e2"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-26T17:57:47.508951" elapsed="0.805298"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-26T17:57:50.787275" level="INFO">Successfully initialized new page object and opened url: https://opensource-demo.orangehrmlive.com/</msg>
+<msg time="2024-12-26T17:57:50.787275" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://opensource-demo.orangehrmlive.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-12-26T17:57:48.314755" elapsed="2.472520"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:47.507598" elapsed="3.279677"/>
+</kw>
+<kw name="Quando inserir as credenciais válidas" owner="keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:57:50.788490" level="INFO">Fills the text 'Admin' in the given field.</msg>
+<arg>//input[@name="username"]</arg>
+<arg>Admin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:50.788490" elapsed="0.347797"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:57:51.136789" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<arg>//input[@name="password"]</arg>
+<arg>admin123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:51.136789" elapsed="0.011399"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:51.149344" level="INFO">Clicks the element '//button[@type="submit"]'.</msg>
+<arg>//button[@type="submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:51.148188" elapsed="1.184324"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:50.788490" elapsed="1.544022"/>
+</kw>
+<kw name="Então sou redirecionado para a tela Dashboard" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:57:52.683406" level="INFO">Waited for Element with selector //h6[text()="Dashboard"] at state visible</msg>
+<arg>//h6[text()="Dashboard"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:57:52.333512" elapsed="0.349894"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:52.332512" elapsed="0.350894"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:47.507598" elapsed="5.175808"/>
+</test>
+<test id="s1-s3-s1-t2" name="Cenário 02: Cadastrar novo Admin e validar sucesso" line="14">
+<kw name="Dado que estou logado" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:57:52.693531" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<arg>//li[contains(@class,"userdropdown")]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:57:52.687236" elapsed="0.006295"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:52.687236" elapsed="0.006295"/>
+</kw>
+<kw name="E na tela &quot;Admin&quot;" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:52.694532" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
+<arg>//span[text()="Admin"]/../..//a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:52.693531" elapsed="0.795433"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:52.693531" elapsed="0.795433"/>
+</kw>
+<kw name="Quando inserir as informações do novo Admin" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:53.490467" level="INFO">Clicks the element '//button[normalize-space()="Add"]'.</msg>
+<arg>//button[normalize-space()="Add"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:53.490467" elapsed="0.698563"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:54.190594" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
+<arg>//label[text()="User Role"]/../..//i</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:54.190534" elapsed="0.341014"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:54.531548" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
+<arg>//label[text()="User Role"]/../..//*[text()="Admin"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:54.531548" elapsed="0.019139"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:54.550687" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
+<arg>//label[text()="Status"]/../..//i</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:54.550687" elapsed="0.019341"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:54.571028" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
+<arg>//label[text()="Status"]/../..//*[text()="Enabled"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:54.570028" elapsed="0.022669"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:57:54.592697" level="INFO">Fills the text 'a' in the given field.</msg>
+<arg>//label[text()="Employee Name"]/../..//input</arg>
+<arg>a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:54.592697" elapsed="0.011301"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-26T17:57:57.605128" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-26T17:57:54.603998" elapsed="3.001130"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>//label[text()="Employee Name"]/../..//input</arg>
+<arg>ArrowDown</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:57.605631" elapsed="0.012580"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-26T17:57:58.618455" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-26T17:57:57.618211" elapsed="1.000244"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>//label[text()="Employee Name"]/../..//input</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:58.618455" elapsed="0.008926"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:57:58.628382" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
+<arg>//label[text()="Username"]/../..//input</arg>
+<arg>nomeAdmin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:58.628382" elapsed="0.009643"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:57:58.639026" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<arg>//label[text()="Password"]/../..//input</arg>
+<arg>admin123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:58.639026" elapsed="0.009233"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:57:58.649259" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<arg>//label[text()="Confirm Password"]/../..//input</arg>
+<arg>admin123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:58.649259" elapsed="0.008079"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:57:58.657338" level="INFO">Clicks the element '//button[normalize-space()="Save"]'.</msg>
+<arg>//button[normalize-space()="Save"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:57:58.657338" elapsed="0.024906"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:53.488964" elapsed="5.193280"/>
+</kw>
+<kw name="Então o Admin é cadastrado com sucesso" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:58:00.538745" level="INFO">Waited for Element with selector //*[text()="Successfully Saved"] at state visible</msg>
+<arg>//*[text()="Successfully Saved"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:57:58.682244" elapsed="1.858004"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:58.682244" elapsed="1.858004"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:57:52.685949" elapsed="7.854299"/>
+</test>
+<test id="s1-s3-s1-t3" name="Cenário 03: Buscar Admin cadastrado" line="20">
+<kw name="Dado que estou logado" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:58:00.547764" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<arg>//li[contains(@class,"userdropdown")]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:58:00.544257" elapsed="0.003507"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:00.543257" elapsed="0.004507"/>
+</kw>
+<kw name="E na tela &quot;Admin&quot;" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:00.548763" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
+<arg>//span[text()="Admin"]/../..//a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:00.548763" elapsed="0.676132"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:00.548763" elapsed="0.676132"/>
+</kw>
+<kw name="Quando buscar Admin cadastrado" owner="keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:58:01.225899" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
+<arg>//label[text()="Username"]/../..//input</arg>
+<arg>nomeAdmin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:01.225899" elapsed="0.328075"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:01.554479" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
+<arg>//label[text()="User Role"]/../..//i</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:01.553974" elapsed="0.027246"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:01.581220" level="INFO">Clicks the element '//label[text()="User Role"]/../..//*[text()="Admin"]'.</msg>
+<arg>//label[text()="User Role"]/../..//*[text()="Admin"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:01.581220" elapsed="0.024719"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:58:01.607065" level="INFO">Fills the text 'a' in the given field.</msg>
+<arg>//label[text()="Employee Name"]/../..//input</arg>
+<arg>a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:01.607065" elapsed="0.010161"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-26T17:58:04.618497" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-26T17:58:01.618226" elapsed="3.000271"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>//label[text()="Employee Name"]/../..//input</arg>
+<arg>ArrowDown</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:04.618497" elapsed="0.009028"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-26T17:58:05.628685" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-26T17:58:04.628525" elapsed="1.000160"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>//label[text()="Employee Name"]/../..//input</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:05.628685" elapsed="0.009477"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:05.638162" level="INFO">Clicks the element '//label[text()="Status"]/../..//i'.</msg>
+<arg>//label[text()="Status"]/../..//i</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:05.638162" elapsed="0.017062"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:05.656224" level="INFO">Clicks the element '//label[text()="Status"]/../..//*[text()="Enabled"]'.</msg>
+<arg>//label[text()="Status"]/../..//*[text()="Enabled"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:05.655224" elapsed="0.021117"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:05.677693" level="INFO">Clicks the element '//button[normalize-space()="Search"]'.</msg>
+<arg>//button[normalize-space()="Search"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:05.677693" elapsed="0.022573"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:01.225397" elapsed="4.474869"/>
+</kw>
+<kw name="Então o Admin é exibido na lista de Admins" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:58:06.009988" level="INFO">Waited for Element with selector //div[@role="table"]//div[@role="row"]//div[text()="nomeAdmin"] at state visible</msg>
+<arg>//div[@role="table"]//div[@role="row"]//div[text()="nomeAdmin"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:58:05.700266" elapsed="0.309722"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:05.700266" elapsed="0.309722"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:00.543257" elapsed="5.467731"/>
+</test>
+<test id="s1-s3-s1-t4" name="Cenário 04: Apagar Admin cadastrado" line="26">
+<kw name="Dado que estou logado" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:58:06.016503" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<arg>//li[contains(@class,"userdropdown")]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:58:06.012989" elapsed="0.003514"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:06.012989" elapsed="0.003940"/>
+</kw>
+<kw name="E na tela &quot;Admin&quot;" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:06.016929" level="INFO">Clicks the element '//span[text()="Admin"]/../..//a'.</msg>
+<arg>//span[text()="Admin"]/../..//a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:06.016929" elapsed="0.705335"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:06.016929" elapsed="0.705335"/>
+</kw>
+<kw name="Quando apagar Admin cadastrado" owner="keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-12-26T17:58:06.723768" level="INFO">Fills the text 'nomeAdmin' in the given field.</msg>
+<arg>//label[text()="Username"]/../..//input</arg>
+<arg>nomeAdmin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:06.723265" elapsed="0.291837"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:07.016607" level="INFO">Clicks the element '//label[text()="User Role"]/../..//i'.</msg>
+<arg>//label[text()="User Role"]/../..//i</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.016102" elapsed="0.022143"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:07.039489" level="INFO">Clicks the element '//button[normalize-space()="Search"]'.</msg>
+<arg>//button[normalize-space()="Search"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.038245" elapsed="0.018940"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:07.058695" level="INFO">Clicks the element '//input[@type="checkbox" and @value=0]/..//span'.</msg>
+<arg>//input[@type="checkbox" and @value=0]/..//span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.057185" elapsed="0.335650"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:07.393837" level="INFO">Clicks the element '//button[contains(@class,"table-cell-action")]//i[contains(@class,"trash")]'.</msg>
+<arg>//button[contains(@class,"table-cell-action")]//i[contains(@class,"trash")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.393837" elapsed="0.029397"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:07.423737" level="INFO">Clicks the element '//button[normalize-space()="Yes, Delete"]'.</msg>
+<arg>//button[normalize-space()="Yes, Delete"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.423234" elapsed="0.026524"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:06.722264" elapsed="0.727494"/>
+</kw>
+<kw name="Então o Admin é removido da lista de Admins" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:58:07.769183" level="INFO">Waited for Element with selector //*[text()="Successfully Deleted"] at state visible</msg>
+<arg>//*[text()="Successfully Deleted"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.450758" elapsed="0.318425"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:07.449758" elapsed="0.319425"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:06.012989" elapsed="1.756194"/>
+</test>
+<test id="s1-s3-s1-t5" name="Cenário 05: Realizar Logout" line="32">
+<kw name="Dado que estou logado" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:58:07.775224" level="INFO">Waited for Element with selector //li[contains(@class,"userdropdown")] at state visible</msg>
+<arg>//li[contains(@class,"userdropdown")]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.771184" elapsed="0.005040"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:07.771184" elapsed="0.005040"/>
+</kw>
+<kw name="Quando clicar em &quot;Logout&quot;" owner="keywords">
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:07.776224" level="INFO">Clicks the element '//i[contains(@class,"userdropdown-icon")]'.</msg>
+<arg>//i[contains(@class,"userdropdown-icon")]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.776224" elapsed="0.026809"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-12-26T17:58:07.803033" level="INFO">Clicks the element '//li//a[text()="Logout"]'.</msg>
+<arg>//li//a[text()="Logout"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-12-26T17:58:07.803033" elapsed="1.350022"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:07.776224" elapsed="1.377832"/>
+</kw>
+<kw name="Então sou redirecionado para a tela de login" owner="keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-12-26T17:58:09.525358" level="INFO">Waited for Element with selector //h5[text()="Login"] at state visible</msg>
+<arg>//h5[text()="Login"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-12-26T17:58:09.154056" elapsed="0.371302"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:09.154056" elapsed="0.371302"/>
+</kw>
+<status status="PASS" start="2024-12-26T17:58:07.771184" elapsed="1.755175"/>
+</test>
+<status status="PASS" start="2024-12-26T17:57:47.369825" elapsed="22.158038"/>
+</suite>
+<status status="PASS" start="2024-12-26T17:57:47.367132" elapsed="22.233028"/>
+</suite>
+<status status="PASS" start="2024-12-26T17:57:05.640364" elapsed="63.959796"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="10" fail="0" skip="0" id="s1" name="Api &amp; Mobile &amp; Web">Api &amp; Mobile &amp; Web</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Api">Api &amp; Mobile &amp; Web.Api</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="testCases">Api &amp; Mobile &amp; Web.Api.testCases</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="Mobile">Api &amp; Mobile &amp; Web.Mobile</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2-s1" name="testCases">Api &amp; Mobile &amp; Web.Mobile.testCases</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s3" name="Web">Api &amp; Mobile &amp; Web.Web</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s3-s1" name="testCases">Api &amp; Mobile &amp; Web.Web.testCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
