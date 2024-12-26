@@ -17,14 +17,14 @@ REM Upgrade pip command
 python -m pip install --upgrade pip
 
 REM Instale as bibliotecas do Robot Framework no ambiente virtual
-pip install robotframework
-pip install robotframework-browser
-pip install robotframework-requests
+pip install robotframework --no-cache-dir
+pip install robotframework-browser --no-cache-dir
+pip install robotframework-appiumlibrary --no-cache-dir
+pip install robotframework-requests --no-cache-dir
 
+REM Inicialize o Robot Framework Browser
 rfbrowser init
 
 echo Instalacao do Robot Framework concluida.
 pause
 
-REM Desative o ambiente virtual
-deactivate
