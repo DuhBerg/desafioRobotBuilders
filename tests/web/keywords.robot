@@ -29,8 +29,11 @@ Quando inserir as informações do novo Admin
     Click                                   //label[text()="User Role"]/../..//*[text()="Admin"]
     Click                                   //label[text()="Status"]/../..//i
     Click                                   //label[text()="Status"]/../..//*[text()="Enabled"]
-    Fill Text                               //label[text()="Employee Name"]/../..//input                                    Orange Test Test
-    Click                                   //label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]       
+    Fill Text                               //label[text()="Employee Name"]/../..//input                                    a
+    Sleep                                   3s
+    Press Keys                              //label[text()="Employee Name"]/../..//input                                    ArrowDown 
+    Sleep                                   1s
+    Press Keys                              //label[text()="Employee Name"]/../..//input                                    Enter      
     Fill Text                               //label[text()="Username"]/../..//input                                         nomeAdmin
     Fill Text                               //label[text()="Password"]/../..//input                                         admin123
     Fill Text                               //label[text()="Confirm Password"]/../..//input                                 admin123
@@ -43,8 +46,11 @@ Quando buscar Admin cadastrado
     Fill Text                               //label[text()="Username"]/../..//input                                         nomeAdmin
     Click                                   //label[text()="User Role"]/../..//i
     Click                                   //label[text()="User Role"]/../..//*[text()="Admin"]
-    Fill Text                               //label[text()="Employee Name"]/../..//input                                    Orange Test Test
-    Click                                   //label[text()="Employee Name"]/../..//div[contains(@class,"autocomplete-dropdown")]//*[text()="Orange Test Test"]  
+    Fill Text                               //label[text()="Employee Name"]/../..//input                                    a
+    Sleep                                   3s
+    Press Keys                              //label[text()="Employee Name"]/../..//input                                    ArrowDown 
+    Sleep                                   1s
+    Press Keys                              //label[text()="Employee Name"]/../..//input                                    Enter 
     Click                                   //label[text()="Status"]/../..//i
     Click                                   //label[text()="Status"]/../..//*[text()="Enabled"]
     Click                                   //button[normalize-space()="Search"]
@@ -53,7 +59,9 @@ Então o Admin é exibido na lista de Admins
     Wait For Elements State                 //div[@role="table"]//div[@role="row"]//div[text()="nomeAdmin"]                 visible
 
 Quando apagar Admin cadastrado
-    Quando buscar Admin cadastrado
+    Fill Text                               //label[text()="Username"]/../..//input                                         nomeAdmin
+    Click                                   //label[text()="User Role"]/../..//i
+    Click                                   //button[normalize-space()="Search"]
     Click                                   //input[@type="checkbox" and @value=0]/..//span
     Click                                   //button[contains(@class,"table-cell-action")]//i[contains(@class,"trash")]
     Click                                   //button[normalize-space()="Yes, Delete"]
